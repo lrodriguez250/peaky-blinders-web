@@ -1,0 +1,154 @@
+:root{
+  --ink:#0c0b09;
+  --leather:#2b2018;
+  --smoke:#4a453e;
+  --gold:#b98a3c;
+  --gold-dim:#8a6a30;
+  --blood:#5e1414;
+  --cream:#e8ded0;
+  --cream-dim:#9c9384;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Oswald',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.04em;}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1rem 2rem;
+  background:linear-gradient(to bottom, rgba(12,11,9,.95), rgba(12,11,9,0));
+}
+.brand{font-family:'Cinzel',serif; font-weight:900; font-size:1.1rem; letter-spacing:.15em; color:var(--gold);}
+.seasons-nav{display:flex; gap:1.4rem; list-style:none;}
+.seasons-nav a{
+  color:var(--cream-dim); text-decoration:none; font-size:.8rem;
+  letter-spacing:.12em; text-transform:uppercase; transition:color .3s;
+}
+.seasons-nav a:hover, .seasons-nav a:focus-visible{color:var(--gold);}
+
+/* ---------- HERO ---------- */
+.hero{
+  height:100vh; min-height:600px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; position:relative;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(90,60,20,.25), transparent 60%),
+    linear-gradient(180deg, #171310 0%, #0c0b09 70%);
+}
+.smoke{
+  position:absolute; inset:0; pointer-events:none; opacity:.35;
+  background:radial-gradient(ellipse 60% 40% at 20% 80%, rgba(180,150,100,.15), transparent 70%),
+             radial-gradient(ellipse 50% 30% at 80% 70%, rgba(120,100,70,.12), transparent 70%);
+  animation:drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift{ from{transform:translateX(-3%) translateY(0);} to{transform:translateX(3%) translateY(-2%);} }
+.hero-eyebrow{color:var(--gold-dim); letter-spacing:.35em; font-size:.75rem; text-transform:uppercase; margin-bottom:1rem;}
+.hero h1{font-size:clamp(3rem,9vw,7rem); color:var(--cream); text-shadow:0 0 40px rgba(185,138,60,.25);}
+.hero .sub{margin-top:1rem; color:var(--cream-dim); font-size:1rem; letter-spacing:.08em; max-width:32rem;}
+.razor{
+  width:90px; height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin-top:2.2rem;
+}
+.scroll-hint{position:absolute; bottom:2.2rem; font-size:.7rem; letter-spacing:.2em; color:var(--cream-dim); text-transform:uppercase;}
+
+/* ---------- SEASON SECTIONS ---------- */
+.season{
+  position:relative; padding:7rem 6vw 6rem; min-height:100vh;
+  border-top:1px solid rgba(185,138,60,.15);
+}
+.season-head{display:flex; align-items:baseline; gap:1.4rem; margin-bottom:.6rem;}
+.season-num{font-family:'Cinzel',serif; font-weight:900; font-size:1rem; color:var(--gold-dim);}
+.season h2{font-size:clamp(2rem,5vw,3.2rem); color:var(--cream);}
+.season-year{color:var(--cream-dim); font-size:.85rem; letter-spacing:.15em; margin-bottom:2.2rem;}
+.season-synopsis{max-width:42rem; color:var(--cream-dim); line-height:1.75; font-weight:300; margin-bottom:3rem;}
+.season-synopsis strong{color:var(--gold); font-weight:500;}
+
+/* ---------- GRILLA DE FOTOS ---------- */
+.photo-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr);
+  gap:.8rem; margin-bottom:3rem;
+}
+.photo-item{
+  position:relative; aspect-ratio:4/3;
+  background-size:cover; background-position:center;
+  filter:sepia(.3) contrast(1.05) brightness(.95) saturate(1.05);
+  border:1px solid rgba(185,138,60,.25);
+  overflow:hidden;
+  transition:transform .3s ease;
+}
+.photo-item:hover{ transform:scale(1.02); }
+.photo-item::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 45%, rgba(0,0,0,.8) 100%);
+}
+.photo-item .slide-caption{
+  position:absolute; left:0; right:0; bottom:0; z-index:1;
+  padding:.9rem 1rem;
+  font-size:.72rem; letter-spacing:.09em; color:var(--cream);
+  text-transform:uppercase;
+}
+.photo-item .slide-caption span{display:block; color:var(--gold-dim); font-size:.62rem; margin-top:.2rem;}
+.photo-item.img-stock::after{
+  content:"Imagen referencial"; position:absolute; top:.5rem; right:.5rem; z-index:1;
+  font-size:.58rem; letter-spacing:.08em; text-transform:uppercase; color:var(--cream-dim);
+  background:rgba(0,0,0,.5); padding:.2rem .4rem; border:1px solid rgba(185,138,60,.3);
+}
+.photo-item.img-missing{
+  background:repeating-linear-gradient(135deg, #1a1611, #1a1611 12px, #171310 12px, #171310 24px);
+}
+.photo-item.img-missing::after{
+  content:"Colocá tu imagen en /img/"; position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--smoke);
+}
+
+@media (max-width:720px){
+  .photo-grid{ grid-template-columns:1fr; }
+}
+
+.ep-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1.2rem; margin-bottom:2.5rem;
+}
+.ep-card{
+  border:1px solid rgba(185,138,60,.2); padding:1.2rem 1.1rem;
+  background:linear-gradient(160deg, rgba(255,255,255,.02), transparent);
+  transition:border-color .3s, transform .3s;
+}
+.ep-card:hover{border-color:var(--gold); transform:translateY(-3px);}
+.ep-card .ep-num{font-family:'Cinzel',serif; color:var(--gold-dim); font-size:.75rem; letter-spacing:.1em;}
+.ep-card h3{font-size:1rem; margin:.4rem 0 .5rem; color:var(--cream);}
+.ep-card p{font-size:.82rem; color:var(--cream-dim); line-height:1.5;}
+
+.cast{display:flex; flex-wrap:wrap; gap:.6rem;}
+.cast span{
+  font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:.4rem .8rem; border:1px solid var(--smoke); color:var(--cream-dim);
+}
+
+/* progressive tone per season: darker→more crimson as the story escalates */
+#s1{ background:#0c0b09; }
+#s2{ background:#100d0a; }
+#s3{ background:#130f0c; }
+#s4{ background:linear-gradient(180deg,#150f0d,#170e0e); }
+#s5{ background:linear-gradient(180deg,#170f0e,#1c0f0f); }
+#s6{ background:linear-gradient(180deg,#1a0f0f,#210c0c); }
+#s6 .season-num, #s6 h2{ color:var(--blood); }
+
+footer{
+  padding:3rem 6vw; text-align:center; border-top:1px solid rgba(185,138,60,.15);
+  color:var(--cream-dim); font-size:.75rem; letter-spacing:.15em; text-transform:uppercase;
+}
+
+@media (max-width:720px){
+  .seasons-nav{display:none;}
+  .season{padding:5rem 6vw 4rem;}
+}
