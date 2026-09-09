@@ -25,6 +25,53 @@ body {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, .015) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1.5px 1.5px;
+  mix-blend-mode: overlay;
+  opacity: .5;
+}
+
+/* ---------- SEPARADOR ORNAMENTAL ---------- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+  padding: 2.2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: min(14vw, 120px);
+  background: linear-gradient(90deg, transparent, rgba(185, 138, 60, .4));
+}
+
+.divider::after {
+  background: linear-gradient(90deg, rgba(185, 138, 60, .4), transparent);
+}
+
+.divider span {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--gold-dim);
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 h1,
@@ -199,6 +246,15 @@ nav {
 .season-synopsis strong {
   color: var(--gold);
   font-weight: 500;
+}
+
+.season-synopsis::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8em;
+  line-height: .75;
+  float: left;
+  padding: .05em .1em 0 0;
+  color: var(--gold);
 }
 
 /* ---------- GRILLA DE FOTOS ---------- */
@@ -520,4 +576,427 @@ footer {
   .character-photo {
     max-width: 220px;
   }
+}
+
+/* ---------- NAV: estado activo ---------- */
+.seasons-nav a.active {
+  color: var(--gold);
+}
+
+/* ---------- LINK "TEMPORADA X" EN CADA PERSONAJE ---------- */
+.character-season {
+  display: inline-block;
+  margin-top: .9rem;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .3s, border-color .3s;
+}
+
+.character-season:hover,
+.character-season:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ---------- PÁGINA DE INICIO: HEADER + 2 COLUMNAS ---------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(to bottom, rgba(12, 11, 9, .95), rgba(12, 11, 9, 0));
+}
+
+.intro-split {
+  min-height: 100vh;
+  padding: 9rem 6vw 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.intro-text {
+  flex: 1 1 380px;
+}
+
+.intro-text h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  color: var(--cream);
+  margin: .6rem 0 1.4rem;
+}
+
+.intro-text p {
+  color: var(--cream-dim);
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+  max-width: 38rem;
+}
+
+.intro-image {
+  flex: 1 1 380px;
+  align-self: stretch;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(.3) contrast(1.05) brightness(.95) saturate(1.05);
+  border: 1px solid rgba(185, 138, 60, .25);
+  position: relative;
+}
+
+.intro-image.img-stock::after {
+  content: "Imagen referencial";
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  font-size: .62rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  background: rgba(0, 0, 0, .5);
+  padding: .25rem .5rem;
+  border: 1px solid rgba(185, 138, 60, .3);
+}
+
+@media (max-width:720px) {
+  .intro-split {
+    padding-top: 7.5rem;
+  }
+}
+
+/* ---------- FOOTER DE INICIO (legales + redes) ---------- */
+.site-footer {
+  padding: 2.5rem 6vw;
+  border-top: 1px solid rgba(185, 138, 60, .15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-legal p {
+  color: var(--cream-dim);
+  font-size: .72rem;
+  letter-spacing: .03em;
+  max-width: 38rem;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.footer-social a {
+  color: var(--cream-dim);
+  font-size: 1.1rem;
+  transition: color .3s;
+}
+
+.footer-social a:hover {
+  color: var(--gold);
+}
+
+/* ---------- GALERÍA (mosaico con progresión I→VI) ---------- */
+.gallery-hero {
+  padding: 9rem 6vw 2.5rem;
+}
+
+.gallery-hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  color: var(--cream);
+}
+
+.gallery-hero p {
+  color: var(--cream-dim);
+  max-width: 38rem;
+  margin-top: .8rem;
+  line-height: 1.7;
+}
+
+.gallery-mosaic {
+  padding: 0 6vw 5rem;
+  columns: 4 220px;
+  column-gap: .8rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: .8rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--season-border, rgba(185, 138, 60, .25));
+  filter: sepia(.3) contrast(1.05) brightness(.95) saturate(1.05);
+  transition: transform .3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.015);
+}
+
+.gallery-item.h-tall {
+  height: 340px;
+}
+
+.gallery-item.h-mid {
+  height: 250px;
+}
+
+.gallery-item.h-short {
+  height: 180px;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, .75) 100%);
+}
+
+.gallery-item .gallery-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: .6rem .7rem;
+  font-size: .62rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.gallery-item.img-stock::after {
+  content: "Ref.";
+  position: absolute;
+  top: .4rem;
+  right: .4rem;
+  z-index: 1;
+  font-size: .55rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  background: rgba(0, 0, 0, .5);
+  padding: .15rem .35rem;
+}
+
+/* tinte progresivo: de neutral (T1) a rojo sangre (T6) */
+.gallery-item[data-season="1"] {
+  --season-border: rgba(185, 138, 60, .2);
+}
+
+.gallery-item[data-season="2"] {
+  --season-border: rgba(185, 138, 60, .3);
+}
+
+.gallery-item[data-season="3"] {
+  --season-border: rgba(185, 138, 60, .4);
+}
+
+.gallery-item[data-season="4"] {
+  --season-border: rgba(180, 110, 70, .45);
+}
+
+.gallery-item[data-season="5"] {
+  --season-border: rgba(170, 80, 60, .5);
+}
+
+.gallery-item[data-season="6"] {
+  --season-border: rgba(94, 20, 20, .65);
+  filter: sepia(.3) contrast(1.1) brightness(.9) saturate(1.15) hue-rotate(-4deg);
+}
+
+@media (max-width:900px) {
+  .gallery-mosaic {
+    columns: 3 180px;
+  }
+}
+
+@media (max-width:600px) {
+  .gallery-mosaic {
+    columns: 2 140px;
+    padding-top: 0;
+  }
+
+  .gallery-hero {
+    padding-top: 7.5rem;
+  }
+}
+
+/* ---------- CONTACTO ---------- */
+.contact-hero {
+  padding: 9rem 6vw 2rem;
+}
+
+.contact-hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  color: var(--cream);
+}
+
+.contact-hero p {
+  color: var(--cream-dim);
+  max-width: 36rem;
+  margin-top: .8rem;
+  line-height: 1.7;
+}
+
+.contact-form {
+  padding: 0 6vw 6rem;
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.contact-form label {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #151210;
+  border: 1px solid rgba(185, 138, 60, .25);
+  color: var(--cream);
+  padding: .8rem 1rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: .8rem 2rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: background .3s, color .3s;
+}
+
+.contact-form button:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.form-note {
+  color: var(--smoke);
+  font-size: .7rem;
+  margin-top: -.6rem;
+}
+
+/* ---------- LIGHTBOX DE GALERÍA ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(6, 5, 4, .94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 88vw;
+  max-height: 80vh;
+  object-fit: contain;
+  filter: sepia(.25) contrast(1.05) brightness(.97);
+  border: 1px solid rgba(185, 138, 60, .3);
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 6vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--cream-dim);
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  font-family: 'Cinzel', serif;
+}
+
+.lightbox-close:hover {
+  color: var(--gold);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  min-width: 60px;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: color .3s;
+}
+
+.lightbox-nav.prev {
+  left: 0;
+}
+
+.lightbox-nav.next {
+  right: 0;
+}
+
+.lightbox-nav:hover {
+  color: var(--cream);
+}
+
+.gallery-item {
+  cursor: pointer;
 }

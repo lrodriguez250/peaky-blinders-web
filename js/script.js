@@ -14,5 +14,7 @@ function aplicarFallback(selector, size) {
   });
 }
 
-aplicarFallback('.photo-item', '800x600');
-aplicarFallback('.character-photo', '600x800');
+aplicarFallback('.photo-item', '800/600');
+aplicarFallback('.character-photo', '600/800');
+aplicarFallback('.gallery-item', '500/700');
+aplicarFallback('.intro-image', '900/700');
