@@ -961,7 +961,7 @@ footer {
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
   font-family: 'Cinzel', serif;
 }
 
