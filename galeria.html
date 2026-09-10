@@ -1,167 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería — Peaky Blinders</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Oswald:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería — Peaky Blinders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
 
-  <header class="site-header">
-    <div class="brand">Peaky Blinders</div>
-    <ul class="seasons-nav">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="temporadas.html">Temporadas</a></li>
-      <li><a href="galeria.html" class="active">Galería</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </header>
-
-  <section class="gallery-hero">
-    <h1>Galería</h1>
-    <p>Un recorrido fotográfico por las seis temporadas, en orden — fijate cómo el tono se va oscureciendo y virando a
-      rojo a medida que la historia avanza hacia su final.</p>
-  </section>
-
-  <div class="gallery-mosaic">
-
-    <!-- Temporada I -->
-    <div class="gallery-item h-tall" data-season="1" data-seed="1" style="background-image:url('img/s1-1.jpg')">
-      <p class="gallery-label">T1 · Small Heath, 1919</p>
-    </div>
-    <div class="gallery-item h-short" data-season="1" data-seed="2" style="background-image:url('img/s1-2.jpg')">
-      <p class="gallery-label">T1 · El Garrison</p>
-    </div>
-    <div class="gallery-item h-mid" data-season="1" data-seed="3" style="background-image:url('img/s1-3.jpg')">
-      <p class="gallery-label">T1 · Tommy Shelby</p>
-    </div>
-
-    <!-- Temporada II -->
-    <div class="gallery-item h-mid" data-season="2" data-seed="4" style="background-image:url('img/s2-1.jpg')">
-      <p class="gallery-label">T2 · Camden Town</p>
-    </div>
-    <div class="gallery-item h-tall" data-season="2" data-seed="5" style="background-image:url('img/s2-2.jpg')">
-      <p class="gallery-label">T2 · Alfie Solomons</p>
-    </div>
-    <div class="gallery-item h-short" data-season="2" data-seed="6" style="background-image:url('img/s2-3.jpg')">
-      <p class="gallery-label">T2 · Ascot</p>
-    </div>
-
-    <!-- Temporada III -->
-    <div class="gallery-item h-short" data-season="3" data-seed="7" style="background-image:url('img/s3-1.jpg')">
-      <p class="gallery-label">T3 · La boda</p>
-    </div>
-    <div class="gallery-item h-mid" data-season="3" data-seed="8" style="background-image:url('img/s3-2.jpg')">
-      <p class="gallery-label">T3 · Oro ruso</p>
-    </div>
-    <div class="gallery-item h-tall" data-season="3" data-seed="9" style="background-image:url('img/s3-3.jpg')">
-      <p class="gallery-label">T3 · Redención</p>
-    </div>
-
-    <!-- Temporada IV -->
-    <div class="gallery-item h-tall" data-season="4" data-seed="10" style="background-image:url('img/s4-1.jpg')">
-      <p class="gallery-label">T4 · Luca Changretta</p>
-    </div>
-    <div class="gallery-item h-short" data-season="4" data-seed="11" style="background-image:url('img/s4-2.jpg')">
-      <p class="gallery-label">T4 · El topo</p>
-    </div>
-    <div class="gallery-item h-mid" data-season="4" data-seed="12" style="background-image:url('img/s4-3.jpg')">
-      <p class="gallery-label">T4 · Ajuste de cuentas</p>
-    </div>
-
-    <!-- Temporada V -->
-    <div class="gallery-item h-mid" data-season="5" data-seed="13" style="background-image:url('img/s5-1.jpg')">
-      <p class="gallery-label">T5 · El crac del 29</p>
-    </div>
-    <div class="gallery-item h-short" data-season="5" data-seed="14" style="background-image:url('img/s5-2.jpg')">
-      <p class="gallery-label">T5 · Oswald Mosley</p>
-    </div>
-    <div class="gallery-item h-tall" data-season="5" data-seed="15" style="background-image:url('img/s5-3.jpg')">
-      <p class="gallery-label">T5 · Fantasmas</p>
-    </div>
-
-    <!-- Temporada VI -->
-    <div class="gallery-item h-tall" data-season="6" data-seed="16" style="background-image:url('img/s6-1.jpg')">
-      <p class="gallery-label">T6 · Un rey, una rata</p>
-    </div>
-    <div class="gallery-item h-mid" data-season="6" data-seed="17" style="background-image:url('img/s6-2.jpg')">
-      <p class="gallery-label">T6 · Secretos</p>
-    </div>
-    <div class="gallery-item h-short" data-season="6" data-seed="18" style="background-image:url('img/s6-3.jpg')">
-      <p class="gallery-label">T6 · Adiós, pequeña Inglaterra</p>
-    </div>
-
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Peaky Blinders</a>
+      <ul class="seasons-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="temporadas.html">Temporadas</a></li>
+        <li><a href="personajes.html">Personajes</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
   </div>
+</header>
 
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
-    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Anterior">‹</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="">
-    <p class="lightbox-caption" id="lightboxCaption"></p>
-    <button class="lightbox-nav next" id="lightboxNext" aria-label="Siguiente">›</button>
+<section class="gallery-hero">
+  <h1>Galería</h1>
+  <p>Un recorrido fotográfico por las seis temporadas, en orden — fijate cómo el tono se va oscureciendo y virando a rojo a medida que la historia avanza hacia su final.</p>
+</section>
+
+<div class="gallery-mosaic">
+
+  <!-- Temporada I -->
+  <div class="gallery-item h-tall" data-season="1" data-seed="1" style="background-image:url('img/s1-1.jpg')"><p class="gallery-label">T1 · Small Heath, 1919</p></div>
+  <div class="gallery-item h-short" data-season="1" data-seed="2" style="background-image:url('img/s1-2.jpg')"><p class="gallery-label">T1 · El Garrison</p></div>
+  <div class="gallery-item h-mid" data-season="1" data-seed="3" style="background-image:url('img/s1-3.jpg')"><p class="gallery-label">T1 · Tommy Shelby</p></div>
+
+  <!-- Temporada II -->
+  <div class="gallery-item h-mid" data-season="2" data-seed="4" style="background-image:url('img/s2-1.jpg')"><p class="gallery-label">T2 · Camden Town</p></div>
+  <div class="gallery-item h-tall" data-season="2" data-seed="5" style="background-image:url('img/s2-2.jpg')"><p class="gallery-label">T2 · Alfie Solomons</p></div>
+  <div class="gallery-item h-short" data-season="2" data-seed="6" style="background-image:url('img/s2-3.jpg')"><p class="gallery-label">T2 · Ascot</p></div>
+
+  <!-- Temporada III -->
+  <div class="gallery-item h-short" data-season="3" data-seed="7" style="background-image:url('img/s3-1.jpg')"><p class="gallery-label">T3 · La boda</p></div>
+  <div class="gallery-item h-mid" data-season="3" data-seed="8" style="background-image:url('img/s3-2.jpg')"><p class="gallery-label">T3 · Oro ruso</p></div>
+  <div class="gallery-item h-tall" data-season="3" data-seed="9" style="background-image:url('img/s3-3.jpg')"><p class="gallery-label">T3 · Redención</p></div>
+
+  <!-- Temporada IV -->
+  <div class="gallery-item h-tall" data-season="4" data-seed="10" style="background-image:url('img/s4-1.jpg')"><p class="gallery-label">T4 · Luca Changretta</p></div>
+  <div class="gallery-item h-short" data-season="4" data-seed="11" style="background-image:url('img/s4-2.jpg')"><p class="gallery-label">T4 · El topo</p></div>
+  <div class="gallery-item h-mid" data-season="4" data-seed="12" style="background-image:url('img/s4-3.jpg')"><p class="gallery-label">T4 · Ajuste de cuentas</p></div>
+
+  <!-- Temporada V -->
+  <div class="gallery-item h-mid" data-season="5" data-seed="13" style="background-image:url('img/s5-1.jpg')"><p class="gallery-label">T5 · El crac del 29</p></div>
+  <div class="gallery-item h-short" data-season="5" data-seed="14" style="background-image:url('img/s5-2.jpg')"><p class="gallery-label">T5 · Oswald Mosley</p></div>
+  <div class="gallery-item h-tall" data-season="5" data-seed="15" style="background-image:url('img/s5-3.jpg')"><p class="gallery-label">T5 · Fantasmas</p></div>
+
+  <!-- Temporada VI -->
+  <div class="gallery-item h-tall" data-season="6" data-seed="16" style="background-image:url('img/s6-1.jpg')"><p class="gallery-label">T6 · Un rey, una rata</p></div>
+  <div class="gallery-item h-mid" data-season="6" data-seed="17" style="background-image:url('img/s6-2.jpg')"><p class="gallery-label">T6 · Secretos</p></div>
+  <div class="gallery-item h-short" data-season="6" data-seed="18" style="background-image:url('img/s6-3.jpg')"><p class="gallery-label">T6 · Adiós, pequeña Inglaterra</p></div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+  <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+  <button class="lightbox-nav next" id="lightboxNext" aria-label="Siguiente">›</button>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-legal">
+    <p>© 2026 Fan page no oficial — By Order of the Peaky Blinders. Todas las marcas y contenido original pertenecen a sus respectivos dueños. Sitio creado con fines educativos.</p>
   </div>
+  <div class="footer-social">
+    <a href="https://x.com" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+  </div>
+</footer>
 
-  <footer class="site-footer">
-    <div class="footer-legal">
-      <p>© 2026 Fan page no oficial — By Order of the Peaky Blinders. Todas las marcas y contenido original pertenecen a
-        sus respectivos dueños. Sitio creado con fines educativos.</p>
-    </div>
-    <div class="footer-social">
-      <a href="https://x.com" target="_blank" rel="noopener" aria-label="X (Twitter)"><i
-          class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i
-          class="fa-brands fa-instagram"></i></a>
-      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i
-          class="fa-brands fa-facebook"></i></a>
-      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i
-          class="fa-brands fa-youtube"></i></a>
-    </div>
-  </footer>
+<script src="js/script.js"></script>
+<script>
+  const items = [...document.querySelectorAll('.gallery-item')];
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  let current = 0;
 
-  <script src="js/script.js"></script>
-  <script>
-    const items = [...document.querySelectorAll('.gallery-item')];
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    let current = 0;
+  function abrir(i) {
+    current = i;
+    mostrar();
+    lightbox.classList.add('open');
+  }
+  function mostrar() {
+    const item = items[current];
+    const url = item.style.backgroundImage.slice(5, -2);
+    const label = item.querySelector('.gallery-label');
+    lightboxImg.src = url;
+    lightboxCaption.textContent = label ? label.textContent : '';
+  }
+  function cerrar() { lightbox.classList.remove('open'); }
+  function siguiente() { current = (current + 1) % items.length; mostrar(); }
+  function anterior() { current = (current - 1 + items.length) % items.length; mostrar(); }
 
-    function abrir(i) {
-      current = i;
-      mostrar();
-      lightbox.classList.add('open');
-    }
-    function mostrar() {
-      const item = items[current];
-      const url = item.style.backgroundImage.slice(5, -2);
-      const label = item.querySelector('.gallery-label');
-      lightboxImg.src = url;
-      lightboxCaption.textContent = label ? label.textContent : '';
-    }
-    function cerrar() { lightbox.classList.remove('open'); }
-    function siguiente() { current = (current + 1) % items.length; mostrar(); }
-    function anterior() { current = (current - 1 + items.length) % items.length; mostrar(); }
-
-    items.forEach((item, i) => item.addEventListener('click', () => abrir(i)));
-    document.getElementById('lightboxClose').addEventListener('click', cerrar);
-    document.getElementById('lightboxNext').addEventListener('click', siguiente);
-    document.getElementById('lightboxPrev').addEventListener('click', anterior);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) cerrar(); });
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') cerrar();
-      if (e.key === 'ArrowRight') siguiente();
-      if (e.key === 'ArrowLeft') anterior();
-    });
-  </script>
+  items.forEach((item, i) => item.addEventListener('click', () => abrir(i)));
+  document.getElementById('lightboxClose').addEventListener('click', cerrar);
+  document.getElementById('lightboxNext').addEventListener('click', siguiente);
+  document.getElementById('lightboxPrev').addEventListener('click', anterior);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) cerrar(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') cerrar();
+    if (e.key === 'ArrowRight') siguiente();
+    if (e.key === 'ArrowLeft') anterior();
+  });
+</script>
 </body>
-
 </html>

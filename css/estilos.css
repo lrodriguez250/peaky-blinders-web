@@ -81,51 +81,62 @@ h3 {
   letter-spacing: .04em;
 }
 
-/* ---------- NAV ---------- */
-nav {
+/* ---------- HEADER / NAV (unificado en todas las páginas) ---------- */
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   display: flex;
+  justify-content: center;
+  padding: 1.1rem 2rem;
+  background: linear-gradient(to bottom, rgba(12, 11, 9, .95), rgba(12, 11, 9, 0));
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: linear-gradient(to bottom, rgba(12, 11, 9, .95), rgba(12, 11, 9, 0));
+  gap: 2rem;
 }
 
 .brand {
   font-family: 'Cinzel', serif;
   font-weight: 900;
-  font-size: 1.1rem;
-  letter-spacing: .15em;
+  font-size: 1.25rem;
+  letter-spacing: .13em;
   color: var(--gold);
+  text-decoration: none;
+  transition: opacity .3s;
+  flex-shrink: 0;
+}
+
+.brand:hover {
+  opacity: .8;
 }
 
 .seasons-nav {
   display: flex;
-  gap: 1.4rem;
+  gap: 1.6rem;
   list-style: none;
 }
 
 .seasons-nav a {
   color: var(--cream-dim);
   text-decoration: none;
-  font-size: .8rem;
-  letter-spacing: .12em;
+  font-size: .85rem;
+  letter-spacing: .08em;
   text-transform: uppercase;
   transition: color .3s;
+  padding: .3rem .1rem;
 }
 
 .seasons-nav a:hover,
 .seasons-nav a:focus-visible {
   color: var(--gold);
-}
-
-.seasons-nav li:last-child a {
-  border-left: 1px solid rgba(185, 138, 60, .3);
-  padding-left: 1.4rem;
 }
 
 /* ---------- HERO ---------- */
@@ -454,22 +465,35 @@ footer {
   .season {
     padding: 5rem 6vw 4rem;
   }
+
+  .footer-legal p {
+    white-space: normal;
+  }
 }
 
 /* ---------- PÁGINA DE PERSONAJES ---------- */
 .characters-hero {
-  padding: 1rem 6vw 3rem;
+  padding: 8.5rem 6vw 3rem;
+}
+
+.characters-hero .page-eyebrow {
+  display: block;
+  color: var(--gold-dim);
+  letter-spacing: .3em;
+  font-size: .72rem;
+  text-transform: uppercase;
+  margin-bottom: .7rem;
 }
 
 .characters-hero h1 {
-  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-size: clamp(2.4rem, 6vw, 4rem);
   color: var(--cream);
 }
 
 .characters-hero p {
   color: var(--cream-dim);
   max-width: 38rem;
-  margin-top: .8rem;
+  margin-top: .9rem;
   line-height: 1.7;
 }
 
@@ -602,20 +626,7 @@ footer {
   border-color: var(--gold);
 }
 
-/* ---------- PÁGINA DE INICIO: HEADER + 2 COLUMNAS ---------- */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: linear-gradient(to bottom, rgba(12, 11, 9, .95), rgba(12, 11, 9, 0));
-}
-
+/* ---------- PÁGINA DE INICIO: HERO GRANDE + 2 COLUMNAS ---------- */
 .intro-split {
   min-height: 100vh;
   padding: 9rem 6vw 5rem;
@@ -623,16 +634,29 @@ footer {
   flex-wrap: wrap;
   gap: 3rem;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(90, 60, 20, .22), transparent 60%),
+    linear-gradient(180deg, #171310 0%, #0c0b09 70%);
+}
+
+.intro-split .smoke {
+  position: absolute;
 }
 
 .intro-text {
   flex: 1 1 380px;
+  position: relative;
+  z-index: 1;
 }
 
 .intro-text h1 {
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
   color: var(--cream);
-  margin: .6rem 0 1.4rem;
+  margin: .6rem 0 1rem;
+  text-shadow: 0 0 40px rgba(185, 138, 60, .2);
+  line-height: 1.02;
 }
 
 .intro-text p {
@@ -688,8 +712,8 @@ footer {
   color: var(--cream-dim);
   font-size: .72rem;
   letter-spacing: .03em;
-  max-width: 38rem;
   line-height: 1.6;
+  white-space: nowrap;
 }
 
 .footer-social {
@@ -868,6 +892,28 @@ footer {
   display: block;
 }
 
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 1.1rem;
+  top: 2.65rem;
+  color: var(--gold-dim);
+  font-size: .85rem;
+  pointer-events: none;
+}
+
+.input-icon input,
+.input-icon textarea {
+  padding-left: 3.4rem;
+}
+
+.input-icon textarea~i {
+  top: 2.65rem;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -913,6 +959,115 @@ footer {
   color: var(--smoke);
   font-size: .7rem;
   margin-top: -.6rem;
+}
+
+/* ---------- CONTACTO: layout con mapa ---------- */
+.contact-layout {
+  padding: 0 6vw 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-panel {
+  flex: 1 1 340px;
+  border: 1px solid rgba(185, 138, 60, .22);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .015), transparent);
+  padding: 2rem;
+}
+
+.contact-panel h2 {
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.contact-panel h2 i {
+  font-size: 1rem;
+  color: var(--gold-dim);
+}
+
+.contact-layout .contact-form {
+  padding: 0;
+  gap: 1.2rem;
+}
+
+.contact-map-wrap {
+  min-height: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-map-wrap iframe {
+  width: 100%;
+  flex: 1;
+  min-height: 280px;
+  border: 1px solid rgba(185, 138, 60, .25);
+  filter: sepia(.35) contrast(1.05) saturate(.8) brightness(.9) hue-rotate(-6deg);
+}
+
+.contact-map-label {
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: .7rem;
+  display: block;
+}
+
+/* ---------- PERSONAJES: categorías estilo hover "Apple" ---------- */
+.category-tabs {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(185, 138, 60, .15);
+  border-bottom: 1px solid rgba(185, 138, 60, .15);
+  position: relative;
+  z-index: 2;
+  background: var(--ink);
+}
+
+.category-tab {
+  flex: 1;
+  text-align: center;
+  padding: 1.3rem 1rem;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: var(--cream-dim);
+  border-right: 1px solid rgba(185, 138, 60, .15);
+  transition: color .3s, background .3s;
+}
+
+.category-tab:last-child {
+  border-right: none;
+}
+
+.category-tab.active,
+.category-tab:hover {
+  color: var(--gold);
+  background: rgba(185, 138, 60, .05);
+}
+
+.category-panels {
+  position: relative;
+}
+
+.category-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s ease, opacity .4s ease;
+}
+
+.category-panel.active {
+  max-height: 4000px;
+  opacity: 1;
 }
 
 /* ---------- LIGHTBOX DE GALERÍA ---------- */
@@ -961,7 +1116,7 @@ footer {
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
-  z-index: 3;
+  z-index: 2;
   font-family: 'Cinzel', serif;
 }
 

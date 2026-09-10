@@ -16,13 +16,16 @@
 <body>
 
   <header class="site-header">
-    <div class="brand">Peaky Blinders</div>
-    <ul class="seasons-nav">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="temporadas.html">Temporadas</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="contacto.html" class="active">Contacto</a></li>
-    </ul>
+    <div class="header-inner">
+      <a href="index.html" class="brand">Peaky Blinders</a>
+      <ul class="seasons-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="temporadas.html">Temporadas</a></li>
+        <li><a href="personajes.html">Personajes</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </div>
   </header>
 
   <section class="contact-hero">
@@ -30,22 +33,39 @@
     <p>¿Tenés alguna consulta, corrección o simplemente querés dejar tu opinión sobre la serie? Escribinos.</p>
   </section>
 
-  <form class="contact-form" onsubmit="return false;">
-    <div>
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+  <div class="contact-layout">
+    <div class="contact-panel">
+      <h2></i> Envianos un mensaje</h2>
+      <form class="contact-form" onsubmit="return false;">
+        <div class="input-icon">
+          <label for="nombre">Nombre</label>
+
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="input-icon">
+          <label for="email">Email</label>
+
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="input-icon">
+          <label for="mensaje">Mensaje</label>
+
+          <textarea id="mensaje" name="mensaje" placeholder="Escribí tu mensaje..." required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+        <p class="form-note">* Formulario de demostración — no envía datos a ningún servidor.</p>
+      </form>
     </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+    <div class="contact-panel">
+      <h2><i class="fa-solid fa-location-dot"></i> Birmingham, Inglaterra</h2>
+      <div class="contact-map-wrap">
+        <iframe src="https://www.google.com/maps?q=Birmingham,+UK&output=embed" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+        </iframe>
+      </div>
     </div>
-    <div>
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Escribí tu mensaje..." required></textarea>
-    </div>
-    <button type="submit">Enviar</button>
-    <p class="form-note">* Formulario de demostración — no envía datos a ningún servidor.</p>
-  </form>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-legal">
