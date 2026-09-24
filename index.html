@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peaky Blinders — Inicio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peaky Blinders — Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Oswald:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="brand">Peaky Blinders</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Peaky Blinders</a>
       <ul class="seasons-nav">
         <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="temporadas.html">Temporadas</a></li>
+        <li class="has-submenu">
+          <a href="temporadas.html">Temporadas</a>
+          <ul class="submenu">
+            <li><a href="temporadas.html#s1">Temporada I</a></li>
+            <li><a href="temporadas.html#s2">Temporada II</a></li>
+            <li><a href="temporadas.html#s3">Temporada III</a></li>
+            <li><a href="temporadas.html#s4">Temporada IV</a></li>
+            <li><a href="temporadas.html#s5">Temporada V</a></li>
+            <li><a href="temporadas.html#s6">Temporada VI</a></li>
+          </ul>
+        </li>
         <li><a href="personajes.html">Personajes</a></li>
         <li><a href="galeria.html">Galería</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
-  </div>
-</header>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
 
-<section class="intro-split">
-  <div class="smoke"></div>
-  <div class="intro-text">
-    <span class="hero-eyebrow">Birmingham, England — 1919-1933</span>
-    <h1>By Order of<br>the Peaky Blinders</h1>
-    <div class="razor"></div>
-    <p>Thomas Shelby vuelve de las trincheras de la Primera Guerra Mundial con una determinación de hierro: sacar a su familia de la pobreza de Small Heath, sin importar los medios. Lo que empieza como un negocio de apuestas ilegales se transforma, temporada a temporada, en un imperio que se extiende de Birmingham a Londres, y de ahí al resto del mundo.</p>
-    <p>A lo largo de seis temporadas, los Shelby enfrentan a la policía, a organizaciones rivales, a la mafia internacional y a la política más peligrosa de la Europa de entreguerras. Cada alianza tiene un precio, y cada enemigo derrotado deja paso a uno nuevo, más grande que el anterior.</p>
-    <p>Esta página reúne todo el universo de la serie: temporada por temporada, personaje por personaje, con el mismo tono oscuro y elegante que caracteriza a la familia más temida de Small Heath.</p>
-  </div>
-  <div class="intro-image" style="background-image:url('img/inicio-representativa.jpg')" data-seed="200"></div>
-</section>
+  <section class="intro-split">
+    <div class="smoke"></div>
+    <div class="intro-text">
+      <span class="hero-eyebrow">Birmingham, England — 1919-1933</span>
+      <h1>By Order of<br>the Peaky Blinders</h1>
+      <div class="razor"></div>
+      <p>Thomas Shelby vuelve de las trincheras de la Primera Guerra Mundial con una determinación de hierro: sacar a su
+        familia de la pobreza de Small Heath, sin importar los medios. Lo que empieza como un negocio de apuestas
+        ilegales se transforma, temporada a temporada, en un imperio que se extiende de Birmingham a Londres, y de ahí
+        al resto del mundo.</p>
+      <p>A lo largo de seis temporadas, los Shelby enfrentan a la policía, a organizaciones rivales, a la mafia
+        internacional y a la política más peligrosa de la Europa de entreguerras. Cada alianza tiene un precio, y cada
+        enemigo derrotado deja paso a uno nuevo, más grande que el anterior.</p>
+      <p>Esta página reúne todo el universo de la serie: temporada por temporada, personaje por personaje, con el mismo
+        tono oscuro y elegante que caracteriza a la familia más temida de Small Heath.</p>
+    </div>
+    <div class="intro-image" style="background-image:url('img/inicio-representativa.jpg')" data-seed="200"></div>
+  </section>
 
-<footer class="site-footer">
-  <div class="footer-legal">
-    <p>© 2026 Fan page no oficial — By Order of the Peaky Blinders. Todas las marcas y contenido original pertenecen a sus respectivos dueños. Sitio creado con fines educativos.</p>
-  </div>
-  <div class="footer-social">
-    <a href="https://x.com" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-  </div>
-</footer>
+  <footer class="site-footer">
+    <div class="footer-legal">
+      <p>© 2026 Fan page no oficial — By Order of the Peaky Blinders. Todas las marcas y contenido original pertenecen a
+        sus respectivos dueños. Sitio creado con fines educativos.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://x.com" target="_blank" rel="noopener" aria-label="X (Twitter)"><i
+          class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i
+          class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i
+          class="fa-brands fa-facebook"></i></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i
+          class="fa-brands fa-youtube"></i></a>
+    </div>
+  </footer>
 
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -69,6 +69,24 @@ h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.04em;}
 }
 .seasons-nav a:hover, .seasons-nav a:focus-visible{color:var(--gold);}
 
+/* ---------- SUBMENÚ DESPLEGABLE (Temporadas) ---------- */
+.has-submenu{ position:relative; }
+.has-submenu > a::after{ content:" ▾"; font-size:.6em; color:var(--gold-dim); }
+.submenu{
+  list-style:none; position:absolute; top:100%; left:0; margin-top:.6rem;
+  min-width:170px; background:#141110; border:1px solid rgba(185,138,60,.25);
+  display:none; flex-direction:column; padding:.4rem 0; z-index:150;
+}
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu{ display:flex; }
+.submenu a{ padding:.6rem 1.1rem; font-size:.75rem; white-space:nowrap; display:block; }
+
+/* ---------- BOTÓN DE MENÚ (mobile) ---------- */
+.nav-toggle{
+  display:none; background:none; border:1px solid rgba(185,138,60,.4);
+  color:var(--gold); font-size:1.1rem; padding:.4rem .7rem; cursor:pointer;
+}
+
 /* ---------- HERO ---------- */
 .hero{
   height:100vh; min-height:600px;
@@ -190,7 +208,21 @@ footer{
 }
 
 @media (max-width:720px){
-  .seasons-nav{display:none;}
+  .nav-toggle{ display:block; }
+  .seasons-nav{
+    display:none; position:fixed; top:64px; left:0; right:0; z-index:99;
+    flex-direction:column; gap:0; background:#0e0c0a;
+    border-top:1px solid rgba(185,138,60,.2); max-height:80vh; overflow-y:auto;
+    padding:.5rem 6vw 1.5rem;
+  }
+  .seasons-nav.open{ display:flex; }
+  .seasons-nav > li{ border-bottom:1px solid rgba(185,138,60,.1); }
+  .seasons-nav > li > a{ display:block; padding:1rem 0; }
+  .has-submenu > a::after{ display:none; }
+  .submenu{
+    position:static; display:flex; margin-top:0; border:none; background:none; padding:0 0 .6rem 1rem;
+  }
+  .submenu a{ padding:.55rem 0; }
   .season{padding:5rem 6vw 4rem;}
   .footer-legal p{ white-space:normal; }
 }

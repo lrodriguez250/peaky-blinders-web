@@ -20,11 +20,22 @@
       <a href="index.html" class="brand">Peaky Blinders</a>
       <ul class="seasons-nav">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="temporadas.html">Temporadas</a></li>
+        <li class="has-submenu">
+          <a href="temporadas.html">Temporadas</a>
+          <ul class="submenu">
+            <li><a href="temporadas.html#s1">Temporada I</a></li>
+            <li><a href="temporadas.html#s2">Temporada II</a></li>
+            <li><a href="temporadas.html#s3">Temporada III</a></li>
+            <li><a href="temporadas.html#s4">Temporada IV</a></li>
+            <li><a href="temporadas.html#s5">Temporada V</a></li>
+            <li><a href="temporadas.html#s6">Temporada VI</a></li>
+          </ul>
+        </li>
         <li><a href="personajes.html">Personajes</a></li>
         <li><a href="galeria.html">Galería</a></li>
         <li><a href="contacto.html" class="active">Contacto</a></li>
       </ul>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
     </div>
   </header>
 
@@ -35,21 +46,21 @@
 
   <div class="contact-layout">
     <div class="contact-panel">
-      <h2></i> Envianos un mensaje</h2>
+      <h2><i class="fa-solid fa-feather"></i> Envianos un mensaje</h2>
       <form class="contact-form" onsubmit="return false;">
         <div class="input-icon">
           <label for="nombre">Nombre</label>
-
+          <i class="fa-solid fa-user"></i>
           <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
         </div>
         <div class="input-icon">
           <label for="email">Email</label>
-
+          <i class="fa-solid fa-envelope"></i>
           <input type="email" id="email" name="email" placeholder="tu@email.com" required>
         </div>
         <div class="input-icon">
           <label for="mensaje">Mensaje</label>
-
+          <i class="fa-solid fa-pen-nib"></i>
           <textarea id="mensaje" name="mensaje" placeholder="Escribí tu mensaje..." required></textarea>
         </div>
         <button type="submit">Enviar</button>
@@ -84,6 +95,7 @@
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 
 </html>

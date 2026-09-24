@@ -18,3 +18,16 @@ aplicarFallback('.photo-item', '800/600');
 aplicarFallback('.character-photo', '600/800');
 aplicarFallback('.gallery-item', '500/700');
 aplicarFallback('.intro-image', '900/700');
+
+// Menú hamburguesa (mobile)
+const navToggle = document.querySelector('.nav-toggle');
+const seasonsNav = document.querySelector('.seasons-nav');
+if (navToggle && seasonsNav) {
+  navToggle.addEventListener('click', () => {
+    seasonsNav.classList.toggle('open');
+  });
+  // Cerrar el menú al tocar un link (mejor experiencia en mobile)
+  seasonsNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => seasonsNav.classList.remove('open'));
+  });
+}
